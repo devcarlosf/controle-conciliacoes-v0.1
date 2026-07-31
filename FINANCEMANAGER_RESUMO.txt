@@ -1,0 +1,24 @@
+FINANCE MANAGER - RESUMO DO PROJETO
+
+OBJETIVO - Evoluir o sistema existente, sem reescrever do zero.
+
+PRINCÍPIOS - Nunca apagar funcionalidades existentes. - Nunca apagar
+empresas, categorias, histórico, backups ou configurações. - Evolução
+incremental por versões. - Testar cada alteração antes da próxima.
+
+ARQUITETURA - Separar HTML, CSS e JavaScript. - Modularizar o
+JavaScript. - Organizar em pastas (css, js, assets, modules). -
+Futuramente migrar para IndexedDB.
+
+ROADMAP v0.2.0: Separar HTML/CSS/JS. v0.3.0: Modularizar JS. v0.4.0:
+Migrar para IndexedDB. v0.5.0+: Importações, Centro de Regras,
+Conciliação, Bater Saldo, Dashboard, Auditoria, Exportações e UX.
+
+REGRAS - Sistema multiempresa. - Regras por empresa. - Importação OFX e
+Excel. - Suporte Omie e Saipos. - Saipos: considerar apenas categorias
+marcadas como SIM (configurável). - Conciliação 1x1, 1xN, Nx1 e NxN. -
+Bater Saldo por dia.
+
+ORIENTAÇÃO PARA A IA 1. Leia todo o projeto. 2. Não reescreva. 3.
+Preserve funcionalidades. 4. Evolua uma etapa por vez. 5. Entregue
+versões estáveis.
