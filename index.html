@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finance Manager — Controle de Conciliações</title>
+<meta name="description" content="Finance Manager: controle de conciliações, importações, lembretes e bater saldo — 100% local no navegador.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<div class="fm-shell" id="fm-shell">
+  <div class="fm-backdrop" onclick="toggleSidebar(false)"></div>
+
+  <!-- ===== Menu lateral ===== -->
+  <aside class="fm-sidebar" id="fm-sidebar">
+    <div class="fm-brand">
+      <div class="fm-brand-mark">F</div>
+      <div class="fm-brand-text">
+        <b>Finance Manager</b>
+        <span>Controle de Conciliações</span>
+      </div>
+    </div>
+
+    <nav class="fm-nav" id="fm-nav">
+      <div class="fm-nav-label">Operação</div>
+      <button class="fm-nav-item" data-nav="painel" onclick="navigate('painel')"><span class="fm-nav-ico">📊</span> Dashboard</button>
+      <button class="fm-nav-item" data-nav="empresas" onclick="navigate('empresas')"><span class="fm-nav-ico">🏢</span> Empresas / Grupos</button>
+      <button class="fm-nav-item" data-nav="baterSaldo" onclick="navigate('baterSaldo')"><span class="fm-nav-ico">⚖️</span> Bater Saldo <span class="fm-nav-tag">Novo</span></button>
+
+      <div class="fm-nav-label">Ferramentas</div>
+      <button class="fm-nav-item" onclick="navigate('empresasCadastro')"><span class="fm-nav-ico">📇</span> Cadastro de empresas</button>
+      <button class="fm-nav-item" onclick="navigate('categorias')"><span class="fm-nav-ico">🏷️</span> Categorias</button>
+      <button class="fm-nav-item" onclick="navigate('calendario')"><span class="fm-nav-ico">🗓️</span> Calendário</button>
+      <button class="fm-nav-item" onclick="navigate('solicitacoes')"><span class="fm-nav-ico">✉️</span> Solicitações</button>
+
+      <div class="fm-nav-label">Sistema</div>
+      <button class="fm-nav-item" onclick="navigate('configuracoes')"><span class="fm-nav-ico">⚙️</span> Configurações</button>
+    </nav>
+
+    <div class="fm-sidebar-foot">
+      <button class="btn btn-sm" onclick="toggleTheme()" title="Alternar tema">🌗 Alternar tema</button>
+      <div class="save-indicator" id="save-indicator-side"></div>
+    </div>
+  </aside>
+
+  <!-- ===== Conteúdo ===== -->
+  <main class="fm-main">
+    <div class="fm-topbar">
+      <button class="fm-menu-btn" onclick="toggleSidebar()" aria-label="Abrir menu">☰</button>
+      <strong style="font-size:14px">Finance Manager</strong>
+    </div>
+    <div class="wrap" id="app"></div>
+  </main>
+</div>
+
+<!-- ===== Núcleo ===== -->
+<script src="js/database.js"></script>
+<script src="js/utils.js"></script>
+
+<!-- ===== Módulos ===== -->
+<script src="modules/categorias/categorias.js"></script>
+<script src="modules/dashboard/dashboard.js"></script>
+<script src="modules/empresas/grupoConfig.js"></script>
+<script src="modules/empresas/acessos.js"></script>
+<script src="modules/empresas/empresas.js"></script>
+<script src="modules/conciliacao/conciliacao.js"></script>
+<script src="modules/conciliacao/edicao.js"></script>
+<script src="modules/auditoria/historico.js"></script>
+<script src="modules/auditoria/lembretes.js"></script>
+<script src="modules/auditoria/calendario.js"></script>
+<script src="modules/importacao/importacao.js"></script>
+<script src="modules/exportacoes/exportacoes.js"></script>
+<script src="modules/backup/backup.js"></script>
+<script src="modules/configuracoes/configuracoes.js"></script>
+<script src="modules/configuracoes/modelos.js"></script>
+<script src="modules/baterSaldo/baterSaldo.js"></script>
+
+<!-- ===== Bootstrap da aplicação (sempre por último) ===== -->
+<script src="js/app.js"></script>
+</body>
+</html>

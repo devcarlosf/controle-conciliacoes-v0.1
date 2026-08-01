@@ -1,0 +1,6 @@
+/* =============================================================
+ * Finance Manager - folha de estilo principal
+ * Carrega a base original + a camada visual moderna (verde).
+ * ============================================================= */
+@import "base.css";
+@import "theme.css";
